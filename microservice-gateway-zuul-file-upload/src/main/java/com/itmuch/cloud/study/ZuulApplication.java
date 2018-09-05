@@ -16,18 +16,5 @@ public class ZuulApplication {
   public static void main(String[] args) {
     SpringApplication.run(ZuulApplication.class, args);
   }
-  @Bean
-  public MultipartResolver multipartResolver() {
-    return new StandardServletMultipartResolver() {
-      @Override
-      public boolean isMultipart(HttpServletRequest request) {
-        String method = request.getMethod().toLowerCase();
-        if (!Arrays.asList("put", "post").contains(method)) {
-          return false;
-        }
-        String contentType = request.getContentType();
-        return (contentType != null &&contentType.toLowerCase().startsWith("multipart/"));
-      }
-    };
-  }
+
 }
