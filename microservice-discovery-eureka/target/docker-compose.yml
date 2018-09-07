@@ -1,0 +1,6 @@
+version: '3'
+services:
+    eureka:
+        build: .
+        ports:
+         - 8761:8761
