@@ -1,0 +1,18 @@
+server:
+  port: 7788
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.10.1.66:8761/eureka/
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: File-upload
+  servlet:
+    multipart:
+      max-file-size: 2000Mb      # Max file size，默认1M
+      max-request-size: 2500Mb   # Max request size，默认10M
+#logging:
+#  level:
+#    root: debug
